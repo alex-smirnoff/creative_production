@@ -654,6 +654,7 @@ ul{
   height: 28px;
   box-shadow: 0px 1px 4px 0px rgba(55, 66, 74, .16);
   border-radius: 6px;
+  z-index: 17;
 }
 #copyIcon{
   position: relative;
