@@ -8,4 +8,3 @@ let webPagesOfAssets = {
 	"Метінвест-СМЦ": "metinvest-smc.com",
 	"Метінвест Діджитал": "metinvest.digital"
 }
-
