@@ -54,7 +54,7 @@ body{
     :root{--screenPosition: 2 !important;}
 }
 #page1{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   background-image: url("background.jpg");
