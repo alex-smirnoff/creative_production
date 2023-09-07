@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metinvest In.Spire</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo1.png">
+  <link rel="stylesheet" type="text/css" href="Styles.css">
+  <script type="text/javascript" src="pdfmake-0.2.7\build\pdfmake.min.js" defer></script>
+  <script type="text/javascript" src="pdfmake-0.2.7\build\vfs_fonts.js" defer></script>
+  <script type="text/javascript" src="qrcodejs-master\qrcode.min.js" defer></script>
+  <script type="text/javascript" src="Encoded_base64.js"></script>
+  <script type="text/javascript" src="Assets_info.js" defer></script>
+</head>
+<body>
+    <div id="wrapper">
+      <section style="overflow-x: hidden">
+        <div class="box box1"></div>
+        <div class="box box1_1"></div>
+        <div class="box box1_2"><h2 id="question">Що будемо генерувати?</h2></div>
+        <div class="box box2">
+        </div>
+      </section>
+      <div id="page1" class="slider">
+        <canvas class="particles page1" data-color="#fb8d14"></canvas>
+        <div id="row1">
+          <div id="r1col1">
+            <div id="box1">
+              <a class="linkPortal" href="https://my.metinvestholding.com"><img src="logo1.png" id="logo_1"></a>
+              <a class="linkPortal" href="https://my.metinvestholding.com"><img src="logo2.png" id="logo_2"></a>
+            </div>
+          </div>
+          <div id="r1col2">
+            <div id="box2">
+              <h2 id="key_phrase">Генератор креативної продукції</h2>
+            </div>
+          </div>
+          <div id="r1col3">
+            <div id="box3">
+              <br>
+            </div>
+          </div>
+        </div>
+        <div id="row2">
+          <br>
+        </div>
+        <div id="row3">
+          <h1 id="title">In.<br>spire</h1>
+        </div>
+        <div id="row4">
+          <h3 id="description">Створює візитки, підписи&nbsp;та&nbsp;ін.</h3>
+        </div>
+        <div id="row5">
+          <button id="startButton">РОЗПОЧАТИ</button>
+        </div>
+      </div>
+      <div id="pageBreak"></div>
+      <div id="page2">
+          <div id="row6"></div>
+          <div id="row7">
+            <div class="box4">
+              <div class="card" id="cardDiv">
+                <div class="card-image">
+                  <img src="business_card_background.jpg">
+                </div>
+                <div class="profile-image">
+                  <img src="business_card_circle.jpg">
+                </div>
+                <div class="card-content">
+                  <h3>Візитна картка</h3>
+                  <p>Персональна візитка, підготовлена відповідно до стандартів компанії, із QR-кодом.<br><br>Картку можна одразу ж віддати на друк чи використовувати в діджитал-форматі. QR-код дозволить автоматично додати інформацію про вас у контакти на телефоні.</p>
+                  <p id="businessCardDescription"></p>
+                </div>
+                <div class="buttonClick">
+                  <button id="createCardButton">СТВОРИТИ</button>
+                </div>
+              </div>
+            </div>
+            <div class="box4">
+              <div class="card" id="closingDiv">
+                <div class="card-image">
+                  <img src="closing_background.jpg">
+                </div>
+                <div class="profile-image">
+                  <img src="closing_circle.jpg">
+                </div>
+                <div class="card-content">
+                  <h3>Підпис до листа</h3>
+                  <p>Упізнаваний підпис з айдентикою компанії та QR-кодом, де містяться ваші контактні дані.<br><br>Відтепер ваші листи будуть особливими. Відсканувавши QR-код, отримувачі зможуть автоматично додати інформацію про вас у контакти на телефоні.</p>
+                  <p id="closingDescription"></p>
+                </div>
+                <div class="buttonClick">
+                  <button id="createClosingButton">СТВОРИТИ</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="modal_window">
+        <div id="formPlace">
+          <div id="formInfo">
+            <div class="inputDiv" id="topInputDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">ПІБ</p>
+              </div>
+              <input class="inputInDiv" type="text" id="fullname" placeholder="Введіть дані сюди" name="fullname" autocomplete="name">
+            </div>
+            <div class="inputDiv" id="emailInputDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv" id="labelEmailInDiv">Електронна пошта</p>
+              </div>
+              <input class="inputInDiv" type="text" id="email" placeholder="Введіть дані сюди" name="email" autocomplete="email">
+              <p class="errorMessage" id="errorEmail">Перевищено допустиму кількість символів</p>
+            </div>
+            <div class="inputDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">Актив</p>
+              </div>
+              <div class="inputBox">
+                <div class="inputBox2" id="orgBoundingBox">
+                  <input class="inputInDiv" type="text" id="organization" placeholder="Оберіть актив компанії" name="organization" autocomplete="organization" readonly>
+                  <svg id="crossIconOrg" width="10px" height="10px" viewBox="4 -1 16 16" fill="none">
+                    <path d="M12 4L4 12" stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4L12 12" stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <svg id="dropdownIconAssets" width="24" height="24" viewBox="0 -2 24 24" fill="none">
+                <path d="M18 15L12 9L6 15" stroke="#2979FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="dropdown-menu" id="assetsDropdownMenu">
+                <div class="searchBox">
+                  <input class="searchInBox" id="searchOrg" type="text" placeholder="Пошук">
+                  <svg class="searchIcon" width="15" height="15" viewBox="0 0 17 17" fill="none">
+                    <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#818A8F" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.0001 14.0001L11.1001 11.1001" stroke="#818A8F" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <ul id="assetsDropdown">
+                </ul>
+              </div>
+            </div>
+            <div class="inputDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">Відділ</p>
+              </div>
+              <input class="inputInDiv" type="text" id="department" placeholder="Введіть дані сюди" name="department" autocomplete="department">
+            </div>
+            <div class="inputDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">Посада</p>
+              </div>
+              <input class="inputInDiv" type="text" id="position" placeholder="Введіть дані сюди" name="position" autocomplete="job-title">
+            </div>
+            <div class="inputDiv" id="addressDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">Адреса офісу</p>
+              </div>
+              <div class = inputBox>
+                <div class = inputBox2 id="addressBoundingBox">
+                  <input class="inputInDiv" type="text" id="office" placeholder="Введіть дані сюди" name="address" autocomplete="street-address" readonly>
+                  <svg id="crossIconAddress" width="10px" height="10px" viewBox="4 -1 16 16" fill="none">
+                    <path d="M12 4L4 12" stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4L12 12" stroke="#2979FF" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <svg id="dropdownIconAddresses" width="24" height="24" viewBox="0 -2 24 24" fill="none">
+                <path d="M18 15L12 9L6 15" stroke="#2979FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="dropdown-menu" id="addressesDropdownMenu">
+                <div class="searchBox">
+                  <input class="searchInBox" id="searchAddress" type="text" placeholder="Пошук">
+                  <svg class="searchIcon" width="15" height="15" viewBox="0 0 17 17" fill="none">
+                    <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#818A8F" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.0001 14.0001L11.1001 11.1001" stroke="#818A8F" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <ul id="officeLocationsDropdown">
+                </ul>
+              </div>
+            </div>
+            <div class="inputDiv" id="workPhoneDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">Робочий телефон</p>
+              </div>
+              <input class="inputInDiv" type="text" id="workPhone" placeholder="+XX (XXX) XXX XX XX" name="phone" autocomplete="tel">
+            </div>
+            <div class="inputDiv">
+              <div class="labelDiv">
+                <p class="labelInDiv">Ваш мобільний телефон</p>
+              </div>
+              <input class="inputInDiv" type="text" id="mobilePhone" placeholder="+XX (XXX) XXX XX XX" name="phone" autocomplete="tel">
+            </div>
+          </div>
+          <div id="formDisplay">
+            <div id="cardFront">
+              <img src="logoCard.png" id="logoCard">
+              <p class="inputInCard leftCol" id="companyInCard">АКТИВ КОМПАНІЇ</p>
+              <p class="inputInCard leftCol" id="webPageInCard">Сайт</p>
+              <p class="inputInCard leftCol" id="emailInCard">Електронна пошта</p>
+              <p class="inputInCard rightCol" id="fullnameInCard">ПІБ</p>
+              <p class="inputInCard rightCol" id="positionInCard">Посада</p>
+              <p class="inputInCard rightCol" id="departmentInCard">Відділ</p>
+              <p class="inputInCard rightCol" id="addressInCard">Адреса офісу</p>
+              <p class="inputInCard rightCol" id="workPhoneInCard">Робочий телефон</p>
+              <p class="inputInCard rightCol" id="mobilePhoneInCard">Мобільний телефон</p>
+            </div>
+            <div id="cardBack">
+              <div id='qrInClosing' style='position: relative; top: 45%; left: 35%; width: 112px; height: auto;'>
+              </div>
+              <div id='closingExampleText' style='position: absolute; max-width: 230px; top: 5%; left: 35%; z-index: 15; opacity: 1;'>
+                <p  class="textClosing" id='endingText' style='margin-top: 5px; padding-bottom: 9px;'>З повагою,<br><br></p>
+                <p  class="textClosing" id='fullNameClosingText' style='line-height: 10px; margin-bottom: 0px;'><b>ПІБ</b></p>
+                <p  class="textClosing" id='positionClosingText' style='line-height: 10px; margin-bottom: 0px; margin-top: 0px;'>Посада</p>
+                <p  class="textClosing" id='departmentClosingText' style='line-height: 10px; margin-top: 0px;'>Відділ</p>
+                <p  class="textClosing" id='organizationClosingText'>Актив компанії</p>
+                <p  class="textClosing" id='groupName' style='padding-bottom: 5px;'>Група Метінвест<br><br></p>
+                <p  class="textClosing" id='mobilePhoneClosingText'>Мобільний телефон</p>
+                <p  class="textClosing" id='emailClosingText' style='color: #8fe9ff; cursor: pointer;'><u>Електронна пошта</u></p>
+                <p  class="textClosing" id='webPageClosingText' style='color: #8fe9ff; cursor: pointer; margin-top: 10px;'><u>Сайт</u></p>
+              </div>
+              <div id="copyInCard">
+                <img src="copyIcon.png" id="copyIcon">
+                  <img src="copiedIcon.png" id="copiedIcon">
+                  <svg id="copiedMessage" width="108" height="44" viewBox="0 0 108 44" fill="none">
+                    <g opacity="0.8" filter="url(#filter0_d_112_33164)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8 3.00006C5.79086 3.00006 4 4.79092 4 7.00006V35.0001C4 37.2092 5.79086 39.0001 8 39.0001H96C98.2091 39.0001 100 37.2092 100 35.0001V32.7863C100 31.486 101.887 30.1856 103.069 29.4988C103.434 29.2867 103.434 28.7134 103.069 28.5014C101.887 27.8145 100 26.5141 100 25.2138V7.00006C100 4.79092 98.2091 3.00006 96 3.00006H8Z" fill="#161616"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_112_33164" x="0" y="6.10352e-05" width="107.343" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="1"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.215686 0 0 0 0 0.258824 0 0 0 0 0.290196 0 0 0 0.16 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_112_33164"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_112_33164" result="shape"/>
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p id="copiedText">Скопійовано</p>
+              </div>
+            </div>
+            <div id="qrCode"></div>
+            <div class="modalWindowControl">
+              <div id="infoMessage">
+                <svg id="infoIcon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#2979FF"/>
+                  <path d="M12 16V12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 8H12.01" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p id="infoText">Текст</p>
+              </div>
+              <button id="closeModal">Назад</button>
+              <button id="generateButton">Створити візитку</button>
+            </div>
+              <canvas id="canvasClosing" width="200" height="267" style="background-color:white;"></canvas>
+          </div>
+        </div>
+      </div>
+      <div id="footerDiv">
+        <img src="footer2.png" class="footerImg" id="img2">
+        <img src="footer3.png" class="footerImg" id="img3">
+        <img src="footer4.png" class="footerImg" id="img4">
+        <img src="footer1.png" class="footerImg" id="img1">
+        <img src="footer5.png" class="footerImg" id="img5">
+        <img src="footer6.png" class="footerImg" id="img6">
+      </div>
+      <div id="footerDiv2">
+        <p class="footerText">Департамент корпоративних комунікацій Групи Метінвест</p>
+      </div>
+    </div>
+  <script type="text/javascript" src = "Script.js"></script>
+  <script type="text/javascript" src="particles\particles.js"></script>
+</body>
+</html>
