@@ -871,11 +871,11 @@ ul{
   transform: translateX(-20%);
   top: 0px;
   -webkit-backface-visibility: hidden;
-  -webkit-transition: all .7s;
-  -moz-transition: all .7s;
-  -o-transition: all .7s;
-  -ms-transition: all .7s;
-  transition: all .7s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
 }
 #img6{
   display: block;
