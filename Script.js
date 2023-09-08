@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
             webPageClosingText.innerHTML = "<a target='_blank' href='https://"+webPagesOfAssets[assetsButtons[i].textContent]+"' style='color: #45a2ff;'>"+webPagesOfAssets[assetsButtons[i].textContent]+"</a>";
             downloadIcon.style.opacity = "1";
             downloadInCard.style.cursor = "pointer";
-            if (companyInCard.getBoundingClientRect().height > 14) {
+            if (companyInCard.getBoundingClientRect().height > 20) {
                 companyInCard.style.marginTop = "125px";
                 companyInCardMargin = 69.5;
             }
