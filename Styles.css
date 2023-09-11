@@ -55,6 +55,7 @@ body{
 }
 @media (max-width: 400px){
     #formDisplay, .card, section .box.box1_2 h2, #title{transform: scale(.8); padding-top: 0px !important;}
+    #qrCode, #canvasClosing{transform: translateX(700px);}
 }
 #page1{
   width: 100%;
